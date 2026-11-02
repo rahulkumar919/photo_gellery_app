@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Skeleton loading pulse animation.
+  Wrapped in prefers-reduced-motion so we respect the user's OS setting.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes neu-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .skeleton-pulse {
+    animation: neu-pulse 1.6s ease-in-out infinite;
+  }
+}
+
+/*
+  Spinner rotation animation.
+  Only runs when the user has NOT asked to reduce motion.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spinner {
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+/*
+  Hover lift effect for photo cards.
+  Only fires on devices that support hover (not on touch-only phones).
+*/
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 11px 11px 20px #A3B1C6, -11px -11px 20px #FFFFFF;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+}
+
+/* Respect reduced motion for the card hover too */
+@media (prefers-reduced-motion: reduce) {
+  .card-hover:hover {
+    transform: none;
+  }
+}
