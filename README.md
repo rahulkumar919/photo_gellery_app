@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173** in your browser.
+Open **https://photo-gellery-app.vercel.app** in your browser.
 (Vite may use 5174 or 5175 if 5173 is busy — it will print the actual URL in the terminal.)
 
 ```bash
